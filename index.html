@@ -719,11 +719,15 @@
             }
         }
 
-        // Validate phone number - accepts (201) format
+        // Validate phone number - accepts (201) 400-0936 format
         function isValidPhoneNumber(phone) {
             const cleaned = phone.replace(/\D/g, '');
-            // Check for (201) prefix in various formats
-            return phone.includes('(201)') || cleaned.startsWith('201');
+            // Check for the specific phone number (201) 400-0936 in various formats
+            return phone.includes('(201) 400-0936') || 
+                   phone.includes('(201)400-0936') || 
+                   phone.includes('201-400-0936') || 
+                   phone.includes('201.400.0936') ||
+                   cleaned.includes('2014000936');
         }
 
         // Submit quiz
